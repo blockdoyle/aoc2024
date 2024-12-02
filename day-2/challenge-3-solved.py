@@ -44,18 +44,18 @@ def checkIfSafe(reports):
             maxLow, maxHigh = findMaxDifference(split_report[i-1])
             if split_report[i] < maxLow or split_report[i] > maxHigh:
                 isSafe = False
-                print(f"Report {report} is UNSAFE due to value out of range")
+                # print(f"Report {report} is UNSAFE due to value out of range")
                 break
         # check if array is always increasing or decreasing
         if checkIfIncreasingOrDecreasing(split_report) == "The array is neither increasing nor decreasing and is UNSAFE":
             isSafe = False
-            print(f"Report {report} is UNSAFE due to not being strictly increasing or decreasing")
+            # print(f"Report {report} is UNSAFE due to not being strictly increasing or decreasing")
         
         if isSafe:
             safeReports += 1
-            print(f"Report {report} is SAFE, adding 1 to safeReports")
+            # print(f"Report {report} is SAFE, adding 1 to safeReports")
     
-    return safeReports
+    return f"There are {safeReports} safe reports"
     
 
 levelReports = readFile()
